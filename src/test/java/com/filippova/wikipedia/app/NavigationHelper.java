@@ -10,7 +10,7 @@ public class NavigationHelper extends HelperBase{
     }
 
 
-    public void favourites() {
+    public void goToReadingList() {
         tap(By.xpath("//*[@content-desc='My lists']"));
         tap(By.id("item_title"));
     }

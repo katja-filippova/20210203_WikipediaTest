@@ -10,8 +10,8 @@ public class ArticleTests extends TestBase {
         app.article().doTextSearchWithGivenTerm("Abba");
         app.article().addToFavourites();
         app.article().createReadingList();
-        app.article().close();
-        app.navigation().favourites();
+        app.article().closeTheCurrentArticle();
+        app.navigation().goToReadingList();
         Assert.assertTrue(app.article().isElementPresent(By.id("page_list_item_container")));
     }
 
@@ -20,8 +20,8 @@ public class ArticleTests extends TestBase {
         app.article().doTextSearchWithGivenTerm("Scooter");
         app.article().addToFavourites("My list");
         app.article().createReadingList();
-        app.article().close();
-        app.navigation().favourites();
+        app.article().closeTheCurrentArticle();
+        app.navigation().goToReadingList();
         app.article().removeFromFavourites();
         Assert.assertTrue(app.article().isElementPresent(By.id("reading_list_empty_text")));
     }
@@ -31,8 +31,8 @@ public class ArticleTests extends TestBase {
         app.article().doTextSearchWithGivenTerm("Metallica");
         app.article().addToFavourites();
         app.article().createReadingList();
-        app.article().close();
-        app.navigation().favourites();
+        app.article().closeTheCurrentArticle();
+        app.navigation().goToReadingList();
         app.article().removeFromFavouritesWithSwipe();
         Assert.assertTrue(app.article().isElementPresent(By.id("reading_list_empty_text")));
     }

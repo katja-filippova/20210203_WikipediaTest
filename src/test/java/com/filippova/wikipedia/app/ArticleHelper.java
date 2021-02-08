@@ -41,7 +41,7 @@ public class ArticleHelper extends HelperBase{
         tap(By.id("android:id/button1"));
     }
 
-    public void close() {
+    public void closeTheCurrentArticle() {
         tap(By.xpath("//*[@content-desc='Navigate up']"));
     }
 
